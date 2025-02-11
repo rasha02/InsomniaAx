@@ -31,7 +31,7 @@ jobs:
           ./run-inso.sh
 
       - name: Upload Test Logs
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4.6.0
         with:
           name: inso-test-logs
           path: results/
