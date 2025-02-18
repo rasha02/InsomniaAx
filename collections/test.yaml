@@ -1,11 +1,11 @@
 _type: export
 __export_format: 4
-__export_date: 2025-02-18T14:21:11.090Z
+__export_date: 2025-02-18T14:51:09.000Z
 __export_source: insomnia.desktop.app:v10.3.1
 resources:
   - _id: req_0b90fef957ab41da8c9c12236b1d4625
     parentId: fld_dd575ca1ed114d1c9a1352053d5c9bba
-    modified: 1739888454259
+    modified: 1739889663568
     created: 1739290178268
     url: "{{ _['base-url'] }}/getconsumer/C10000000734740"
     name: getconsumer/LUCID
@@ -45,9 +45,9 @@ resources:
       });	
 
       // Capture Infos
-      console.log("RequestName:" +insomnia.request.name);
-      console.log("ResponseTime in ms:" +responseTime);
-      console.log("ResponseStatus:" +insomnia.response.code);
+      console.log("RequestName: " +insomnia.request.name);
+      console.log("ResponseTime in ms: " +responseTime);
+      console.log("ResponseStatus: " +insomnia.response.code);
       //console.log("Response Body:" +insomnia.response.body.toString('utf-8'));
     settingStoreCookies: true
     settingSendCookies: true
@@ -81,14 +81,12 @@ resources:
     _type: workspace
   - _id: env_9f91da12dad64e9d89f217281734ea96
     parentId: wrk_6c8d896d34324219b812f2654ff23330
-    modified: 1739888459356
+    modified: 1739890247479
     created: 1739290079733
     name: Defaults
     data:
-      token: eyJhbGciOiJSUzI1NiIsImtpZCI6IjVkMTJhYjc4MmNiNjA5NjI4NWY2OWU0OGFlYTk5MDc5YmI1OWNiODYiLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJodHRwczovL2FjY291bnRzLmdvb2dsZS5jb20iLCJhenAiOiIzMjU1NTk0MDU1OS5hcHBzLmdvb2dsZXVzZXJjb250ZW50LmNvbSIsImF1ZCI6IjMyNTU1OTQwNTU5LmFwcHMuZ29vZ2xldXNlcmNvbnRlbnQuY29tIiwic3ViIjoiMTEwOTEyMTkyNTc1MTA4NzI3MTY2IiwiaGQiOiJsb3JlYWwuY29tIiwiZW1haWwiOiJyYWNoYS5oYW1kaUBsb3JlYWwuY29tIiwiZW1haWxfdmVyaWZpZWQiOnRydWUsImF0X2hhc2giOiJFS1NpUjZ2MVE3elVSd1FRakVjNmdnIiwiaWF0IjoxNzM5ODg4NDIxLCJleHAiOjE3Mzk4OTIwMjF9.IATFH_GyL0UcYI1QR6SGuvoeqzk1KpBL-F2-BYqqamdqb0wH6gjVI5KD60CwZT4g-QvgOU3NDGNpxNOLSlUUfnom9zbVwGmH-DJDNTGvNBQgbEMp0ypsdtf99cDAr6U4ciGehcrVL3vWtMtHihvWge7IBeNJP8g7ZsxM-KRtlk6Yo-XxoT2IxgMxm9i4-5TgD0xgylgzAyTsSkUIoIb3tcOlRetDupoZeCj9TbpT5Ehyp_F49usMOZ5YH17EqxDLKU-1PfikqfpIIYm6D_YBlhGZRpLbuNSYLn4RE0V6v_agrgooiGeL889gZsbDJUr8ROal_1nkWRmBpUuiBkJ7Iw
-    dataPropertyOrder:
-      "&":
-        - token
+      token: eyJhbGciOiJSUzI1NiIsImtpZCI6IjVkMTJhYjc4MmNiNjA5NjI4NWY2OWU0OGFlYTk5MDc5YmI1OWNiODYiLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJodHRwczovL2FjY291bnRzLmdvb2dsZS5jb20iLCJhenAiOiIzMjU1NTk0MDU1OS5hcHBzLmdvb2dsZXVzZXJjb250ZW50LmNvbSIsImF1ZCI6IjMyNTU1OTQwNTU5LmFwcHMuZ29vZ2xldXNlcmNvbnRlbnQuY29tIiwic3ViIjoiMTEwOTEyMTkyNTc1MTA4NzI3MTY2IiwiaGQiOiJsb3JlYWwuY29tIiwiZW1haWwiOiJyYWNoYS5oYW1kaUBsb3JlYWwuY29tIiwiZW1haWxfdmVyaWZpZWQiOnRydWUsImF0X2hhc2giOiJvdGpVVHoxRkJhXzRvWEZCTHJsYlZ3IiwiaWF0IjoxNzM5ODkwMTk2LCJleHAiOjE3Mzk4OTM3OTZ9.kaOTpEIhaSG4S04hdSmXU8spO6LGXPDTDTh9L89C4z9ly_8KG2YLM0xgeWgxCKA_jz9uFPyixu-HVmcNu_6PgUuC4ziYs8Qeil7fOde_r9SeZaBspu5onMoGGNvkofd1lTXc0SVdtnQ8sbqWvigFQHn9UsUGJTYJhFvlzKK72rwR-7VBNlDzhnKSWRRYhYdokTP30LGkv2chlGgURLB1p_syBE_AMAR6MgVPuJ9-BuJfaCSqDGfx4YiL2qVhHWnh9PRVzI4qYYsh-z5F1_uemUEOXwwcICc-e4T7o5cEnJOxXQj7TVf_5AssAWE_5s-z064O1A77GU5Zo33vs_WMyA
+    dataPropertyOrder: null
     color: null
     isPrivate: false
     metaSortKey: 1739290079733
@@ -96,7 +94,7 @@ resources:
     kvPairData:
       - id: envPair_455752616f714528bdc8fd2810f8267a
         name: token
-        value: eyJhbGciOiJSUzI1NiIsImtpZCI6IjVkMTJhYjc4MmNiNjA5NjI4NWY2OWU0OGFlYTk5MDc5YmI1OWNiODYiLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJodHRwczovL2FjY291bnRzLmdvb2dsZS5jb20iLCJhenAiOiIzMjU1NTk0MDU1OS5hcHBzLmdvb2dsZXVzZXJjb250ZW50LmNvbSIsImF1ZCI6IjMyNTU1OTQwNTU5LmFwcHMuZ29vZ2xldXNlcmNvbnRlbnQuY29tIiwic3ViIjoiMTEwOTEyMTkyNTc1MTA4NzI3MTY2IiwiaGQiOiJsb3JlYWwuY29tIiwiZW1haWwiOiJyYWNoYS5oYW1kaUBsb3JlYWwuY29tIiwiZW1haWxfdmVyaWZpZWQiOnRydWUsImF0X2hhc2giOiJFS1NpUjZ2MVE3elVSd1FRakVjNmdnIiwiaWF0IjoxNzM5ODg4NDIxLCJleHAiOjE3Mzk4OTIwMjF9.IATFH_GyL0UcYI1QR6SGuvoeqzk1KpBL-F2-BYqqamdqb0wH6gjVI5KD60CwZT4g-QvgOU3NDGNpxNOLSlUUfnom9zbVwGmH-DJDNTGvNBQgbEMp0ypsdtf99cDAr6U4ciGehcrVL3vWtMtHihvWge7IBeNJP8g7ZsxM-KRtlk6Yo-XxoT2IxgMxm9i4-5TgD0xgylgzAyTsSkUIoIb3tcOlRetDupoZeCj9TbpT5Ehyp_F49usMOZ5YH17EqxDLKU-1PfikqfpIIYm6D_YBlhGZRpLbuNSYLn4RE0V6v_agrgooiGeL889gZsbDJUr8ROal_1nkWRmBpUuiBkJ7Iw
+        value: eyJhbGciOiJSUzI1NiIsImtpZCI6IjVkMTJhYjc4MmNiNjA5NjI4NWY2OWU0OGFlYTk5MDc5YmI1OWNiODYiLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJodHRwczovL2FjY291bnRzLmdvb2dsZS5jb20iLCJhenAiOiIzMjU1NTk0MDU1OS5hcHBzLmdvb2dsZXVzZXJjb250ZW50LmNvbSIsImF1ZCI6IjMyNTU1OTQwNTU5LmFwcHMuZ29vZ2xldXNlcmNvbnRlbnQuY29tIiwic3ViIjoiMTEwOTEyMTkyNTc1MTA4NzI3MTY2IiwiaGQiOiJsb3JlYWwuY29tIiwiZW1haWwiOiJyYWNoYS5oYW1kaUBsb3JlYWwuY29tIiwiZW1haWxfdmVyaWZpZWQiOnRydWUsImF0X2hhc2giOiJvdGpVVHoxRkJhXzRvWEZCTHJsYlZ3IiwiaWF0IjoxNzM5ODkwMTk2LCJleHAiOjE3Mzk4OTM3OTZ9.kaOTpEIhaSG4S04hdSmXU8spO6LGXPDTDTh9L89C4z9ly_8KG2YLM0xgeWgxCKA_jz9uFPyixu-HVmcNu_6PgUuC4ziYs8Qeil7fOde_r9SeZaBspu5onMoGGNvkofd1lTXc0SVdtnQ8sbqWvigFQHn9UsUGJTYJhFvlzKK72rwR-7VBNlDzhnKSWRRYhYdokTP30LGkv2chlGgURLB1p_syBE_AMAR6MgVPuJ9-BuJfaCSqDGfx4YiL2qVhHWnh9PRVzI4qYYsh-z5F1_uemUEOXwwcICc-e4T7o5cEnJOxXQj7TVf_5AssAWE_5s-z064O1A77GU5Zo33vs_WMyA
         type: str
         enabled: true
     _type: environment

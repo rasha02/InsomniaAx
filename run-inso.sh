@@ -7,7 +7,7 @@ mkdir -p results
 NUM_ITERATIONS=4  # number of -n iterations per runner
 
 pids=()
-for i in $(seq 1 5); do
+for i in $(seq 1 4); do
     LOG_FILE="results/inso_runner_${i}.log"
     JSON_FILE="results/inso_runner_${i}.json"
     XML_FILE="results/inso_runner_${i}.xml"
@@ -24,9 +24,9 @@ for i in $(seq 1 5); do
     > "$LOG_FILE"
 
     # Extract values for each iteration based on log lines
-    REQUEST_NAMES=($(grep "log: RequestName:" "$LOG_FILE" | sed 's/log: RequestName://'))
-    RESPONSE_TIMES=($(grep "log: ResponseTime:" "$LOG_FILE" | sed 's/log: ResponseTime://;s/ ms//'))
-    STATUSES=($(grep "log: ResponseStatus:" "$LOG_FILE" | sed 's/log: ResponseStatus://'))
+    REQUEST_NAMES=($(grep "log: RequestName:" "$LOG_FILE" | sed 's/log: RequestName: //'))
+    RESPONSE_TIMES=($(grep "log: ResponseTime in ms:" "$LOG_FILE" | sed 's/log: ResponseTime in ms: //'))
+    STATUSES=($(grep "log: ResponseStatus:" "$LOG_FILE" | sed 's/log: ResponseStatus: //'))
 
     # Initialize CSV, JSON, and XML outputs
     echo "request,iteration,status,response_time" > "$CSV_FILE"
