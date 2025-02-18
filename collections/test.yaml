@@ -1,11 +1,11 @@
 _type: export
 __export_format: 4
-__export_date: 2025-02-13T17:03:55.127Z
+__export_date: 2025-02-18T14:21:11.090Z
 __export_source: insomnia.desktop.app:v10.3.1
 resources:
   - _id: req_0b90fef957ab41da8c9c12236b1d4625
     parentId: fld_dd575ca1ed114d1c9a1352053d5c9bba
-    modified: 1739466200249
+    modified: 1739888454259
     created: 1739290178268
     url: "{{ _['base-url'] }}/getconsumer/C10000000734740"
     name: getconsumer/LUCID
@@ -27,116 +27,28 @@ resources:
     metaSortKey: -1739290565557
     isPrivate: false
     pathParameters: []
-    afterResponseScript: >-
+    afterResponseScript: |
       const response = insomnia.response.json();
-
       const responseTime = insomnia.response.responseTime;
-
 
 
       insomnia.test('Check if status is 200', () => {
         insomnia.expect(insomnia.response.code).to.eql(200);
       });
 
-
       insomnia.test('Check responseTime is < 40 ms', () => {
         insomnia.expect(responseTime).to.be.below(200);
       });
-
 
       insomnia.test('Lucid property', () => {
       	insomnia.expect(response).to.have.property('lucid').that.is.a('string');
       });	
 
-
-
-
-      // Capture response time
-
-      console.log("le responseTime est " +responseTime);
-
-      //environment.responseTime = responseTime;
-
-      //console.log("Response Time Set:", environment.responseTime);
-
-
-      console.log("Request Name:" +insomnia.request.name);
-
-      console.log("Response Time:" +responseTime +"ms");
-
-      console.log("Response Status:" +insomnia.response.code);
-
-      console.log("Response Body:" +insomnia.response.body.toString('utf-8'));
-
-
-
-      //insomnia.environment.set("responseTime", responseTime);
-
-      //console.log("Response Time Set:", responseTime);
-
-
-      //insomnia.environment.set("responseTime", responseTime);
-
-      //insomnia.globals.set("responseTime", responseTime);
-
-      //insomnia.variables.set("responseTime", responseTime);
-
-      //insomnia.collectionVariables.set("responseTime", responseTime);
-
-
-
-      // Store response time in Insomnia's environment dynamically
-
-      //insomnia.environment.set("responseTime", responseTime);
-
-      //console.log("Response Time Captured:", insomnia.environment.get("responseTime"));
-
-
-
-
-      // Store response time as a collection variable
-
-      //insomnia.collectionVariables.set("responseTime", responseTime);
-
-      //console.log("Response Time Captured ", insomnia.collectionVariables.get("responseTime"));
-
-
-
-      //const fs = require('fs');
-
-      //const path = require('path');
-
-      // Capture the response time
-
-      //const responseTime = insomnia.response.responseTime;
-
-
-      /*console.log("Response Time Set:", responseTime);
-
-      // Determine the correct file path based on the operating system
-
-      let filePath;
-
-      if (process.platform === "win32") {
-          filePath = path.join(process.env.TEMP, "insomnia_response_time.json"); // Windows temp folder
-      } else {
-          filePath = "/tmp/insomnia_response_time.json"; // Unix-based temp folder
-      }
-
-
-      // Capture response time
-
-      const responseTimeData = JSON.stringify({ responseTime: responseTime }, null, 2);
-
-
-      // Write response time to file
-
-      fs.writeFileSync(filePath, responseTimeData);
-
-
-      console.log("Response Time Saved:", filePath);
-
-      */
+      // Capture Infos
+      console.log("RequestName:" +insomnia.request.name);
+      console.log("ResponseTime in ms:" +responseTime);
+      console.log("ResponseStatus:" +insomnia.response.code);
+      //console.log("Response Body:" +insomnia.response.body.toString('utf-8'));
     settingStoreCookies: true
     settingSendCookies: true
     settingDisableRenderRequestBody: false
@@ -169,12 +81,14 @@ resources:
     _type: workspace
   - _id: env_9f91da12dad64e9d89f217281734ea96
     parentId: wrk_6c8d896d34324219b812f2654ff23330
-    modified: 1739466218630
+    modified: 1739888459356
     created: 1739290079733
     name: Defaults
     data:
-      token: eyJhbGciOiJSUzI1NiIsImtpZCI6ImVlYzUzNGZhNWI4Y2FjYTIwMWNhOGQwZmY5NmI1NGM1NjIyMTBkMWUiLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJodHRwczovL2FjY291bnRzLmdvb2dsZS5jb20iLCJhenAiOiIzMjU1NTk0MDU1OS5hcHBzLmdvb2dsZXVzZXJjb250ZW50LmNvbSIsImF1ZCI6IjMyNTU1OTQwNTU5LmFwcHMuZ29vZ2xldXNlcmNvbnRlbnQuY29tIiwic3ViIjoiMTEwOTEyMTkyNTc1MTA4NzI3MTY2IiwiaGQiOiJsb3JlYWwuY29tIiwiZW1haWwiOiJyYWNoYS5oYW1kaUBsb3JlYWwuY29tIiwiZW1haWxfdmVyaWZpZWQiOnRydWUsImF0X2hhc2giOiJ4MUx3V2FONk0yYXZRaVE2dHlLN2pnIiwiaWF0IjoxNzM5NDY2MDQxLCJleHAiOjE3Mzk0Njk2NDF9.W3l-N0fIu9hLFwjfCoxip_aUHdOoxqpfN2ZVH-ItJbsAzHIiKymx_QZwc0lGg50t-KmgWasEPeaf_C0FJ8yhHJeoaKybiou4srEKSOl9bHe_EnwVb_-nQKT8lY8EsUMZzZQtE8VdsjC_OFmaNnAxf53uEAJ-q6jOvsB0zdRTC_F-jiJlovIKumRrHIIZaIdOsQnuKqAV4wYHPq3DjIcCrfFqO28qmsy3jNfYvPFIYwqW0kQvR1MGNmgVkflOJyw0FI6MzFLXLjTaZplDV7C9h_ayYYlh6h4KJcu0wjEwye0K54rj62DjKetIzmQ1OiasnRyirQkLi4B9Ja2vH5DV0A
-    dataPropertyOrder: null
+      token: eyJhbGciOiJSUzI1NiIsImtpZCI6IjVkMTJhYjc4MmNiNjA5NjI4NWY2OWU0OGFlYTk5MDc5YmI1OWNiODYiLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJodHRwczovL2FjY291bnRzLmdvb2dsZS5jb20iLCJhenAiOiIzMjU1NTk0MDU1OS5hcHBzLmdvb2dsZXVzZXJjb250ZW50LmNvbSIsImF1ZCI6IjMyNTU1OTQwNTU5LmFwcHMuZ29vZ2xldXNlcmNvbnRlbnQuY29tIiwic3ViIjoiMTEwOTEyMTkyNTc1MTA4NzI3MTY2IiwiaGQiOiJsb3JlYWwuY29tIiwiZW1haWwiOiJyYWNoYS5oYW1kaUBsb3JlYWwuY29tIiwiZW1haWxfdmVyaWZpZWQiOnRydWUsImF0X2hhc2giOiJFS1NpUjZ2MVE3elVSd1FRakVjNmdnIiwiaWF0IjoxNzM5ODg4NDIxLCJleHAiOjE3Mzk4OTIwMjF9.IATFH_GyL0UcYI1QR6SGuvoeqzk1KpBL-F2-BYqqamdqb0wH6gjVI5KD60CwZT4g-QvgOU3NDGNpxNOLSlUUfnom9zbVwGmH-DJDNTGvNBQgbEMp0ypsdtf99cDAr6U4ciGehcrVL3vWtMtHihvWge7IBeNJP8g7ZsxM-KRtlk6Yo-XxoT2IxgMxm9i4-5TgD0xgylgzAyTsSkUIoIb3tcOlRetDupoZeCj9TbpT5Ehyp_F49usMOZ5YH17EqxDLKU-1PfikqfpIIYm6D_YBlhGZRpLbuNSYLn4RE0V6v_agrgooiGeL889gZsbDJUr8ROal_1nkWRmBpUuiBkJ7Iw
+    dataPropertyOrder:
+      "&":
+        - token
     color: null
     isPrivate: false
     metaSortKey: 1739290079733
@@ -182,20 +96,20 @@ resources:
     kvPairData:
       - id: envPair_455752616f714528bdc8fd2810f8267a
         name: token
-        value: eyJhbGciOiJSUzI1NiIsImtpZCI6ImVlYzUzNGZhNWI4Y2FjYTIwMWNhOGQwZmY5NmI1NGM1NjIyMTBkMWUiLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJodHRwczovL2FjY291bnRzLmdvb2dsZS5jb20iLCJhenAiOiIzMjU1NTk0MDU1OS5hcHBzLmdvb2dsZXVzZXJjb250ZW50LmNvbSIsImF1ZCI6IjMyNTU1OTQwNTU5LmFwcHMuZ29vZ2xldXNlcmNvbnRlbnQuY29tIiwic3ViIjoiMTEwOTEyMTkyNTc1MTA4NzI3MTY2IiwiaGQiOiJsb3JlYWwuY29tIiwiZW1haWwiOiJyYWNoYS5oYW1kaUBsb3JlYWwuY29tIiwiZW1haWxfdmVyaWZpZWQiOnRydWUsImF0X2hhc2giOiJ4MUx3V2FONk0yYXZRaVE2dHlLN2pnIiwiaWF0IjoxNzM5NDY2MDQxLCJleHAiOjE3Mzk0Njk2NDF9.W3l-N0fIu9hLFwjfCoxip_aUHdOoxqpfN2ZVH-ItJbsAzHIiKymx_QZwc0lGg50t-KmgWasEPeaf_C0FJ8yhHJeoaKybiou4srEKSOl9bHe_EnwVb_-nQKT8lY8EsUMZzZQtE8VdsjC_OFmaNnAxf53uEAJ-q6jOvsB0zdRTC_F-jiJlovIKumRrHIIZaIdOsQnuKqAV4wYHPq3DjIcCrfFqO28qmsy3jNfYvPFIYwqW0kQvR1MGNmgVkflOJyw0FI6MzFLXLjTaZplDV7C9h_ayYYlh6h4KJcu0wjEwye0K54rj62DjKetIzmQ1OiasnRyirQkLi4B9Ja2vH5DV0A
+        value: eyJhbGciOiJSUzI1NiIsImtpZCI6IjVkMTJhYjc4MmNiNjA5NjI4NWY2OWU0OGFlYTk5MDc5YmI1OWNiODYiLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJodHRwczovL2FjY291bnRzLmdvb2dsZS5jb20iLCJhenAiOiIzMjU1NTk0MDU1OS5hcHBzLmdvb2dsZXVzZXJjb250ZW50LmNvbSIsImF1ZCI6IjMyNTU1OTQwNTU5LmFwcHMuZ29vZ2xldXNlcmNvbnRlbnQuY29tIiwic3ViIjoiMTEwOTEyMTkyNTc1MTA4NzI3MTY2IiwiaGQiOiJsb3JlYWwuY29tIiwiZW1haWwiOiJyYWNoYS5oYW1kaUBsb3JlYWwuY29tIiwiZW1haWxfdmVyaWZpZWQiOnRydWUsImF0X2hhc2giOiJFS1NpUjZ2MVE3elVSd1FRakVjNmdnIiwiaWF0IjoxNzM5ODg4NDIxLCJleHAiOjE3Mzk4OTIwMjF9.IATFH_GyL0UcYI1QR6SGuvoeqzk1KpBL-F2-BYqqamdqb0wH6gjVI5KD60CwZT4g-QvgOU3NDGNpxNOLSlUUfnom9zbVwGmH-DJDNTGvNBQgbEMp0ypsdtf99cDAr6U4ciGehcrVL3vWtMtHihvWge7IBeNJP8g7ZsxM-KRtlk6Yo-XxoT2IxgMxm9i4-5TgD0xgylgzAyTsSkUIoIb3tcOlRetDupoZeCj9TbpT5Ehyp_F49usMOZ5YH17EqxDLKU-1PfikqfpIIYm6D_YBlhGZRpLbuNSYLn4RE0V6v_agrgooiGeL889gZsbDJUr8ROal_1nkWRmBpUuiBkJ7Iw
         type: str
         enabled: true
     _type: environment
   - _id: jar_147826c8ad1d494b9421a315388eacc6
     parentId: wrk_6c8d896d34324219b812f2654ff23330
-    modified: 1739465255875
+    modified: 1739888459347
     created: 1739290079738
     name: Default Jar
     cookies: []
     _type: cookie_jar
   - _id: env_6280ccd32efc47f4bd9d8b55e8e1f3ec
     parentId: env_9f91da12dad64e9d89f217281734ea96
-    modified: 1739465255881
+    modified: 1739888459351
     created: 1739290106528
     name: QA
     data:
